@@ -1,23 +1,37 @@
 import C from './constants'
 import appReducer from './store/reducers'
-import initialState from './initialState.json'
+
 import { createStore } from 'redux';
 
-const store = createStore(appReducer, initialState);
+const initialStore = (localStorage['redux-store']) ?
+  JSON.parse(localStorage['redux-store']) :
+  {};
 
-console.log('initial state', store.getState());
+const store = createStore(appReducer);
 
-store.dispatch({
-	type: C.ADD_DAY,
-	payload: {
-		"resort": "Mt Shasta",
-		"date": "2016-10-28",
-		"powder": false,
-		"backcountry": true
-	}
-})
+window.store = store;
 
-console.log('modified state', store.getState());
+store.subscribe(() => console.log(store.getState()));
+
+store.subscribe(() => {
+  const state = JSON.stringify(store.getState());
+  localStorage['redux-store'] = state;
+});
+
+// store.dispatch({
+//   type: C.ADD_DAY,
+//   payload: {
+//     "resort": "Mt Shasta",
+//     "date": "2016-10-28",
+//     "powder": false,
+//     "backcountry": true
+//   }
+// })
+
+// store.dispatch({
+//   type: C.SET_GOAL,
+//   payload: 2,
+// })
 
 // let state = initialState
 
