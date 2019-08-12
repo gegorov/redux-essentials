@@ -32,5 +32,8 @@
     "@babel/preset-stage-0": "^7.0.0",
     "expect": "^24.8.0",
     "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "redux": "^4.0.4"
   }
 }
