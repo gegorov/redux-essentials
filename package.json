@@ -1,39 +1,23 @@
 {
-  "name": "redux-essentials",
+  "name": "ski-day-counter",
   "version": "1.0.0",
-  "description": "redux course sandbox project'",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "challenge-a": "nodemon --exec babel-node ./src/challenges/FETCH_RESORT_NAMES.js",
-    "challenge-b": "nodemon --exec babel-node ./src/challenges/CANCEL_FETCHING.js",
-    "challenge-c": "nodemon --exec babel-node ./src/challenges/CLEAR_SUGGESTIONS.js",
-    "challenge-d": "nodemon --exec babel-node ./src/challenges/CHANGE_SUGGESTIONS.js"
+    "start": "./node_modules/.bin/webpack-dev-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gegorov/redux-essentials.git"
-  },
-  "keywords": [
-    "redux"
-  ],
-  "author": "gegorov",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/gegorov/redux-essentials/issues"
-  },
-  "homepage": "https://github.com/gegorov/redux-essentials#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-stage-0": "^7.0.0",
-    "expect": "^24.8.0",
-    "nodemon": "^1.19.1"
-  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "redux": "^4.0.4"
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.6",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
