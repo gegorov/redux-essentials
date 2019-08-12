@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "challenge-a": "nodemon --exec babel-node ./src/challenges/FETCH_RESORT_NAMES.js",
+    "challenge-b": "nodemon --exec babel-node ./src/challenges/CANCEL_FETCHING.js",
+    "challenge-c": "nodemon --exec babel-node ./src/challenges/CLEAR_SUGGESTIONS.js",
+    "challenge-d": "nodemon --exec babel-node ./src/challenges/CHANGE_SUGGESTIONS.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-stage-0": "^7.0.0",
+    "expect": "^24.8.0",
     "nodemon": "^1.19.1"
   }
 }
