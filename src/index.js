@@ -1,10 +1,23 @@
-import C from './constants'
 import storeFactory from './store'
+import { addDay, removeDay, setGoal } from './actions'
 
+const store = storeFactory();
 
-const initialState = (localStorage['redux-store']) ?
-  JSON.parse(localStorage['redux-store']) :
-  {};
+store.dispatch(
+  addDay('Heavely', '2016-12-22')
+)
+
+store.dispatch(
+  removeDay('2016-12-22')
+)
+
+store.dispatch(
+  setGoal(22)
+)
+
+// const initialState = (localStorage['redux-store']) ?
+//   JSON.parse(localStorage['redux-store']) :
+//   {};
 
 // const store = createStore(appReducer);
 
@@ -19,44 +32,44 @@ const initialState = (localStorage['redux-store']) ?
 //   })
 // }, 500);
 
-const saveState = () => {
-  const state = JSON.stringify(store.getState());
-  localStorage['redux-store'] = state;
-};
+// const saveState = () => {
+//   const state = JSON.stringify(store.getState());
+//   localStorage['redux-store'] = state;
+// };
 
-const store = storeFactory(initialState)
+// const store = storeFactory(initialState)
 
-store.subscribe(saveState);
+// store.subscribe(saveState);
 
-store.dispatch({
-  type: C.ADD_DAY,
-  payload: {
-    "resort": "Mt Shasta",
-    "date": "2016-10-28",
-    "powder": false,
-    "backcountry": true
-  }
-})
+// store.dispatch({
+//   type: C.ADD_DAY,
+//   payload: {
+//     "resort": "Mt Shasta",
+//     "date": "2016-10-28",
+//     "powder": false,
+//     "backcountry": true
+//   }
+// })
 
-store.dispatch({
-  type: C.ADD_DAY,
-  payload: {
-    "resort": "Sqaw Valley",
-    "date": "2016-3-28",
-    "powder": true,
-    "backcountry": true
-  }
-})
+// store.dispatch({
+//   type: C.ADD_DAY,
+//   payload: {
+//     "resort": "Sqaw Valley",
+//     "date": "2016-3-28",
+//     "powder": true,
+//     "backcountry": true
+//   }
+// })
 
-store.dispatch({
-  type: C.ADD_DAY,
-  payload: {
-    "resort": "The Canyons",
-    "date": "2016-10-25",
-    "powder": false,
-    "backcountry": false
-  }
-})
+// store.dispatch({
+//   type: C.ADD_DAY,
+//   payload: {
+//     "resort": "The Canyons",
+//     "date": "2016-10-25",
+//     "powder": false,
+//     "backcountry": false
+//   }
+// })
 
 
 // store.dispatch({
