@@ -28,7 +28,7 @@ export const setGoal = (goal) =>
 export const addError = (message) => 
    ({
       type: C.ADD_ERROR,
-      payload: message
+      payload: typeof message === 'string' ? message : JSON.stringify(message),
    })
 
 export const clearError = index => 
